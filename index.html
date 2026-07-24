@@ -7,7 +7,6 @@
 <meta name="description" content="Kraken is an on-chain protocol that distributes tokenized ETF exposure directly to token holders. Hold the token, earn diversified index exposure, settled fully on-chain." />
 <link rel="icon" type="image/png" href="/assets/kraken-logo.png" />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Kraken — On-chain ETFs, distributed to every holder" />
 <meta property="og:description" content="An on-chain protocol distributing tokenized ETF exposure directly to token holders." />
@@ -20,6 +19,7 @@
 <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
+<div class="progress" id="progress"></div>
 <main class="frame">
 
   <!-- ============ NAV ============ -->
@@ -43,40 +43,35 @@
     </div>
   </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <span class="eyebrow reveal">On-chain ETF distribution protocol</span>
-    <h1 class="hero__title reveal" data-d="1">On-chain ETFs,<br />distributed to every holder</h1>
-    <p class="hero__sub reveal" data-d="2">Kraken tokenizes diversified index baskets and streams that exposure directly to token holders — no intermediaries, no lockups, settled entirely on-chain.</p>
-    <div class="hero__actions reveal" data-d="3">
-      <a href="#" class="btn btn--solid btn--lg">Launch App</a>
-      <a href="#how" class="btn btn--ghost btn--lg">See how it works</a>
+  <!-- ============ HERO (painting behind text) ============ -->
+  <section class="hero" id="hero">
+    <img src="/assets/hero-kraken.jpg" alt="A kraken rising from a misty pale sea" class="hero__bg" id="heroBg" />
+    <div class="hero__veil"></div>
+    <div class="hero__content" id="heroContent">
+      <span class="eyebrow reveal">On-chain ETF distribution protocol</span>
+      <h1 class="hero__title reveal" data-d="1">On-chain ETFs,<br />distributed to every holder</h1>
+      <p class="hero__sub reveal" data-d="2">Kraken tokenizes diversified index baskets and streams that exposure directly to token holders — no intermediaries, no lockups, settled entirely on-chain.</p>
+      <div class="hero__actions reveal" data-d="3">
+        <a href="#" class="btn btn--solid btn--lg">Launch App</a>
+        <a href="#how" class="btn btn--ghost btn--lg">See how it works</a>
+      </div>
+      <div class="hero__meta reveal" data-d="4">
+        <span><strong>$0</strong> management fees</span><span class="dot"></span>
+        <span><strong>24/7</strong> on-chain settlement</span><span class="dot"></span>
+        <span><strong>100%</strong> non-custodial</span>
+      </div>
     </div>
-    <div class="hero__meta reveal" data-d="4">
-      <span><strong>$0</strong> management fees</span><span class="dot"></span>
-      <span><strong>24/7</strong> on-chain settlement</span><span class="dot"></span>
-      <span><strong>100%</strong> non-custodial</span>
-    </div>
+    <div class="hero__scrollhint">Scroll</div>
   </section>
 
-  <!-- ============ HERO SHOWCASE ============ -->
-  <div class="showcase reveal" data-d="2" id="showcase">
-    <div class="showcase__inner">
-      <img src="/assets/hero-kraken.jpg" alt="A kraken rising from a misty pale sea" class="showcase__img" id="heroImg" />
-      <div class="showcase__glow"></div>
-    </div>
-  </div>
-
-  <!-- ============ STRIP ============ -->
-  <section class="strip reveal">
-    <p class="strip__label">Distributing exposure across leading on-chain indices</p>
-    <div class="strip__row">
+  <!-- ============ STRIP (marquee) ============ -->
+  <section class="strip">
+    <p class="strip__label reveal">Distributing exposure across leading on-chain indices</p>
+    <div class="marquee" id="marquee">
       <span>BTC Index</span><span>ETH Index</span><span>DeFi Basket</span><span>L2 Growth</span>
       <span>RWA Yield</span><span>AI &amp; Compute</span><span>Stablecoin Blend</span><span>Blue-Chip 10</span>
     </div>
   </section>
-
-  <hr class="divider" />
 
   <!-- ============ BENEFITS ============ -->
   <section class="section" id="protocol">
@@ -86,24 +81,24 @@
       <p class="section__lead reveal" data-d="2">Hold the token and the basket comes to you — rebalanced, distributed and verifiable, all on-chain.</p>
     </div>
     <div class="benefits">
-      <article class="bcard reveal" data-d="1">
+      <article class="bcard reveal" data-anim="left">
         <span class="bcard__num">01.</span>
         <div class="bcard__img"><img src="/assets/card-tentacle.jpg" alt="Kraken tentacle" /></div>
         <h3>Hold to earn exposure</h3>
         <p>Your balance is your claim — no staking, no lockups.</p>
       </article>
-      <article class="bcard bcard--open reveal" data-d="2">
+      <article class="bcard bcard--open reveal" data-anim="scale" data-d="1">
         <div class="bcard__img"><img src="/assets/card-vortex.jpg" alt="Ocean currents from above" /></div>
         <h3>Automatic on-chain distribution</h3>
         <p>Rebalances and yield flows are executed by the protocol and pushed to holders on a fixed cadence. Every movement is verifiable on the ledger — nothing happens off-chain.</p>
       </article>
-      <article class="bcard reveal" data-d="3">
+      <article class="bcard reveal" data-anim="right">
         <span class="bcard__num">03.</span>
         <div class="bcard__img"><img src="/assets/card-ship.jpg" alt="A ship on a calm misty sea" /></div>
         <h3>Diversified baskets</h3>
         <p>A single token gives you a weathered, diversified position.</p>
       </article>
-      <article class="bcard reveal" data-d="4">
+      <article class="bcard reveal" data-anim="right" data-d="1">
         <span class="bcard__num">04.</span>
         <div class="bcard__img"><img src="/assets/cta-eye.jpg" alt="The eye of a kraken" /></div>
         <h3>Fully verifiable</h3>
@@ -134,10 +129,10 @@
   <!-- ============ STATS ============ -->
   <section class="section">
     <div class="stats">
-      <div class="stat reveal" data-d="1"><strong>8</strong><span>Live index products</span></div>
-      <div class="stat reveal" data-d="2"><strong>100%</strong><span>On-chain settlement</span></div>
-      <div class="stat reveal" data-d="3"><strong>0%</strong><span>Management fees</span></div>
-      <div class="stat reveal" data-d="4"><strong>∞</strong><span>Non-custodial by design</span></div>
+      <div class="stat reveal" data-anim="scale"><strong data-count="8">0</strong><span>Live index products</span></div>
+      <div class="stat reveal" data-anim="scale" data-d="1"><strong data-count="100" data-suffix="%">0%</strong><span>On-chain settlement</span></div>
+      <div class="stat reveal" data-anim="scale" data-d="2"><strong data-count="0" data-suffix="%">0%</strong><span>Management fees</span></div>
+      <div class="stat reveal" data-anim="scale" data-d="3"><strong>&#8734;</strong><span>Non-custodial by design</span></div>
     </div>
   </section>
 
@@ -151,21 +146,21 @@
       <p class="section__lead reveal" data-d="2">A growing lineup of tokenized index products. Hold $KRKN to receive exposure across all of them.</p>
     </div>
     <div class="etfs">
-      <article class="etf reveal" data-d="1"><div class="etf__top"><span class="etf__ticker">kBTC10</span><span class="etf__tag">Majors</span></div><h3>Blue-Chip 10</h3><p>The ten largest, most liquid on-chain assets, weighted by market cap and rebalanced monthly.</p><div class="etf__foot"><span>10 assets</span><span>Monthly rebalance</span></div></article>
-      <article class="etf etf--feature reveal" data-d="2"><div class="etf__top"><span class="etf__ticker">kDEFI</span><span class="etf__tag">Sector</span></div><h3>DeFi Basket</h3><p>Diversified exposure to the leading decentralized finance protocols powering on-chain markets.</p><div class="etf__foot"><span>18 assets</span><span>Bi-weekly rebalance</span></div></article>
-      <article class="etf reveal" data-d="3"><div class="etf__top"><span class="etf__ticker">kRWA</span><span class="etf__tag">Yield</span></div><h3>RWA Yield</h3><p>Tokenized real-world assets and on-chain treasuries assembled into a single yield-bearing index.</p><div class="etf__foot"><span>12 assets</span><span>Quarterly rebalance</span></div></article>
-      <article class="etf reveal" data-d="1"><div class="etf__top"><span class="etf__ticker">kL2</span><span class="etf__tag">Growth</span></div><h3>L2 Growth</h3><p>The scaling layer of the ecosystem — a curated basket of leading Layer-2 networks and tokens.</p><div class="etf__foot"><span>9 assets</span><span>Monthly rebalance</span></div></article>
-      <article class="etf reveal" data-d="2"><div class="etf__top"><span class="etf__ticker">kAI</span><span class="etf__tag">Thematic</span></div><h3>AI &amp; Compute</h3><p>Exposure to the tokens building decentralized AI, compute and data infrastructure.</p><div class="etf__foot"><span>11 assets</span><span>Monthly rebalance</span></div></article>
-      <article class="etf reveal" data-d="3"><div class="etf__top"><span class="etf__ticker">kSTBL</span><span class="etf__tag">Stable</span></div><h3>Stablecoin Blend</h3><p>A diversified, transparency-first blend of leading stablecoins for on-chain cash management.</p><div class="etf__foot"><span>6 assets</span><span>Continuous</span></div></article>
+      <article class="etf reveal" data-anim="up" data-d="1"><div class="etf__top"><span class="etf__ticker">kBTC10</span><span class="etf__tag">Majors</span></div><h3>Blue-Chip 10</h3><p>The ten largest, most liquid on-chain assets, weighted by market cap and rebalanced monthly.</p><div class="etf__foot"><span>10 assets</span><span>Monthly rebalance</span></div></article>
+      <article class="etf etf--feature reveal" data-anim="up" data-d="2"><div class="etf__top"><span class="etf__ticker">kDEFI</span><span class="etf__tag">Sector</span></div><h3>DeFi Basket</h3><p>Diversified exposure to the leading decentralized finance protocols powering on-chain markets.</p><div class="etf__foot"><span>18 assets</span><span>Bi-weekly rebalance</span></div></article>
+      <article class="etf reveal" data-anim="up" data-d="3"><div class="etf__top"><span class="etf__ticker">kRWA</span><span class="etf__tag">Yield</span></div><h3>RWA Yield</h3><p>Tokenized real-world assets and on-chain treasuries assembled into a single yield-bearing index.</p><div class="etf__foot"><span>12 assets</span><span>Quarterly rebalance</span></div></article>
+      <article class="etf reveal" data-anim="up" data-d="1"><div class="etf__top"><span class="etf__ticker">kL2</span><span class="etf__tag">Growth</span></div><h3>L2 Growth</h3><p>The scaling layer of the ecosystem — a curated basket of leading Layer-2 networks and tokens.</p><div class="etf__foot"><span>9 assets</span><span>Monthly rebalance</span></div></article>
+      <article class="etf reveal" data-anim="up" data-d="2"><div class="etf__top"><span class="etf__ticker">kAI</span><span class="etf__tag">Thematic</span></div><h3>AI &amp; Compute</h3><p>Exposure to the tokens building decentralized AI, compute and data infrastructure.</p><div class="etf__foot"><span>11 assets</span><span>Monthly rebalance</span></div></article>
+      <article class="etf reveal" data-anim="up" data-d="3"><div class="etf__top"><span class="etf__ticker">kSTBL</span><span class="etf__tag">Stable</span></div><h3>Stablecoin Blend</h3><p>A diversified, transparency-first blend of leading stablecoins for on-chain cash management.</p><div class="etf__foot"><span>6 assets</span><span>Continuous</span></div></article>
     </div>
   </section>
 
   <hr class="divider" />
 
-  <!-- ============ CTA ============ -->
+  <!-- ============ CTA (painting behind text) ============ -->
   <section class="cta">
-    <div class="cta__box reveal">
-      <img src="/assets/cta-eye.jpg" alt="The eye of a giant kraken emerging from the deep" class="cta__img" />
+    <div class="cta__box reveal" data-anim="scale" id="ctaBox">
+      <img src="/assets/cta-eye.jpg" alt="The eye of a giant kraken emerging from the deep" class="cta__img" id="ctaImg" />
       <div class="cta__scrim"></div>
       <div class="cta__content">
         <h2>The deep is patient.<br />Your exposure shouldn't be.</h2>
@@ -188,10 +183,10 @@
     </div>
     <div class="faq">
       <details class="qa reveal"><summary>What exactly does Kraken distribute?</summary><p>Kraken manages tokenized index baskets ("on-chain ETFs") and distributes the exposure and returns of those baskets pro-rata to $KRKN holders, entirely through on-chain contracts.</p></details>
-      <details class="qa reveal"><summary>Do I need to stake or lock my tokens?</summary><p>No. Distribution is based on your wallet balance. There is no staking contract, lockup, or claim window required to be eligible.</p></details>
-      <details class="qa reveal"><summary>Where are the assets held?</summary><p>Baskets are composed of on-chain assets held by transparent protocol contracts. Kraken is non-custodial by design — you always retain control of your own $KRKN.</p></details>
-      <details class="qa reveal"><summary>How often are baskets rebalanced?</summary><p>Each product publishes its own cadence, ranging from continuous to quarterly. Every rebalance is executed and recorded on-chain.</p></details>
-      <details class="qa reveal"><summary>Is this financial advice?</summary><p>No. Kraken is experimental protocol software. Nothing here is investment advice, and tokenized index products carry risk. Always do your own research.</p></details>
+      <details class="qa reveal" data-d="1"><summary>Do I need to stake or lock my tokens?</summary><p>No. Distribution is based on your wallet balance. There is no staking contract, lockup, or claim window required to be eligible.</p></details>
+      <details class="qa reveal" data-d="2"><summary>Where are the assets held?</summary><p>Baskets are composed of on-chain assets held by transparent protocol contracts. Kraken is non-custodial by design — you always retain control of your own $KRKN.</p></details>
+      <details class="qa reveal" data-d="3"><summary>How often are baskets rebalanced?</summary><p>Each product publishes its own cadence, ranging from continuous to quarterly. Every rebalance is executed and recorded on-chain.</p></details>
+      <details class="qa reveal" data-d="4"><summary>Is this financial advice?</summary><p>No. Kraken is experimental protocol software. Nothing here is investment advice, and tokenized index products carry risk. Always do your own research.</p></details>
     </div>
   </section>
 
@@ -226,27 +221,66 @@
     if (e.target.tagName === 'A') document.body.classList.remove('nav-open');
   });
 
-  // Blur reveal on scroll
+  // Duplicate marquee content for seamless loop
+  const marquee = document.getElementById('marquee');
+  marquee.innerHTML += marquee.innerHTML;
+
+  // Reveal on scroll + stat counters
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll?.('[data-count]').forEach(runCounter);
+      if (e.target.matches?.('[data-count]')) runCounter(e.target);
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Hero image parallax
-  const heroImg = document.getElementById('heroImg');
-  const showcase = document.getElementById('showcase');
+  function runCounter(el){
+    if (el.dataset.done) return; el.dataset.done = '1';
+    const target = parseFloat(el.dataset.count), suffix = el.dataset.suffix || '';
+    const dur = 1200, t0 = performance.now();
+    (function step(t){
+      const p = Math.min((t - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+
+  // Scroll-linked effects: progress bar, hero parallax + fade, CTA parallax
+  const progress = document.getElementById('progress');
+  const heroBg = document.getElementById('heroBg');
+  const heroContent = document.getElementById('heroContent');
+  const hero = document.getElementById('hero');
+  const ctaImg = document.getElementById('ctaImg');
+  const ctaBox = document.getElementById('ctaBox');
   let ticking = false;
-  function parallax() {
-    const rect = showcase.getBoundingClientRect();
-    const progress = (rect.top + rect.height) / (window.innerHeight + rect.height); // 1 -> 0
-    const shift = (0.5 - progress) * 40; // px
-    heroImg.style.setProperty('--par', shift.toFixed(1) + 'px');
+
+  function onScroll(){
+    const y = window.scrollY;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (docH > 0 ? (y / docH) * 100 : 0) + '%';
+
+    // Hero: image drifts down slowly, content rises + fades out
+    const hp = Math.min(y / (window.innerHeight * 0.9), 1);
+    heroBg.style.setProperty('--par', (hp * 60).toFixed(1) + 'px');
+    heroContent.style.setProperty('--heroShift', (-hp * 70).toFixed(1) + 'px');
+    heroContent.style.setProperty('--heroFade', (1 - hp * 1.05).toFixed(3));
+
+    // CTA image parallax when in view
+    if (ctaBox){
+      const r = ctaBox.getBoundingClientRect();
+      const prog = (r.top + r.height) / (window.innerHeight + r.height); // 1 -> 0
+      ctaImg.style.setProperty('--ctaPar', ((0.5 - prog) * 60).toFixed(1) + 'px');
+    }
     ticking = false;
   }
   window.addEventListener('scroll', () => {
-    if (!ticking) { requestAnimationFrame(parallax); ticking = true; }
+    if (!ticking){ requestAnimationFrame(onScroll); ticking = true; }
   }, { passive: true });
-  parallax();
+  onScroll();
 </script>
 </body>
 </html>
