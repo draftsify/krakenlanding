@@ -111,23 +111,25 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-.025em;line-height:1.08}
 .section__head{max-width:var(--maxw);margin:0 auto 48px;text-align:center}
 .section__head .eyebrow{margin-bottom:16px}
 .section__lead{max-width:50ch;margin:16px auto 0;color:var(--muted);font-size:16px}
+/* two-column header (title left, text right) */
+.section__head--split{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;text-align:left}
+.section__head--split .sh__left{max-width:58%}
+.section__head--split .sh__left .h2{margin-top:14px}
+.section__head--split .section__lead{margin:0;text-align:left;max-width:42ch}
 
-/* ============ BENEFIT CARDS ============ */
+/* ============ BENEFIT CARDS (text only) ============ */
 .benefits{max-width:var(--maxw);margin:0 auto;display:flex;gap:16px;align-items:stretch}
 .bcard{flex:1;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);
-  padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:340px;
-  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s}
-.bcard:hover{transform:translateY(-4px)}
-.bcard__num{font-size:14px;color:var(--faint);font-weight:500}
-.bcard__img{border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:var(--frame)}
-.bcard__img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-.bcard:hover .bcard__img img{transform:scale(1.06)}
-.bcard h3{font-size:19px}
-.bcard p{display:none}
-.bcard--open{flex:2.3;background:var(--white);border-color:var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:20px}
-.bcard--open .bcard__img{aspect-ratio:1.7/1;order:-1}
-.bcard--open h3{font-size:22px}
-.bcard--open p{display:block;color:var(--muted);font-size:14.5px}
+  padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:224px;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s,border-color .35s}
+.bcard:hover{transform:translateY(-4px);border-color:var(--line)}
+.bcard__num{font-size:14px;color:var(--faint);font-weight:500;letter-spacing:.02em}
+.bcard h3{font-size:20px}
+.bcard p{color:var(--muted);font-size:14.5px;margin-top:12px}
+.bcard--closed p{display:none}
+.bcard--open{flex:2.2;background:var(--white);border-color:var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);justify-content:center;gap:0}
+.bcard--open h3{font-size:23px}
 
 /* ============ STEPS ============ */
 .steps{max-width:var(--maxw);margin:0 auto;list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
@@ -157,17 +159,13 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-.025em;line-height:1.08}
 .etf__foot{display:flex;justify-content:space-between;font-size:13px;color:var(--faint);
   border-top:1px solid var(--line-soft);padding-top:14px;margin-top:4px}
 
-/* ============ CTA (image behind text) ============ */
+/* ============ CTA (text panel) ============ */
 .cta{padding:36px 28px 88px}
-.cta__box{max-width:var(--maxw);margin:0 auto;position:relative;border:1px solid var(--line);
-  border-radius:var(--radius-lg);overflow:hidden}
-.cta__img{position:absolute;inset:0;width:100%;height:120%;object-fit:cover;
-  transform:translateY(var(--ctaPar,0)) scale(1.04);will-change:transform}
-.cta__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,247,244,.7),rgba(247,247,244,.9))}
-.cta__content{position:relative;text-align:center;padding:96px 24px}
-.cta__content h2{font-size:clamp(28px,4.2vw,48px);line-height:1.05}
-.cta__content p{color:var(--muted);margin:18px auto 0;max-width:46ch}
-.cta__content .hero__actions{justify-content:center}
+.cta__panel{max-width:var(--maxw);margin:0 auto;border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:var(--white);box-shadow:var(--shadow);text-align:center;padding:88px 24px}
+.cta__panel h2{font-size:clamp(28px,4.2vw,48px);line-height:1.05}
+.cta__panel p{color:var(--muted);margin:18px auto 0;max-width:46ch}
+.cta__panel .hero__actions{justify-content:center}
 
 /* ============ FAQ ============ */
 .faq{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
@@ -207,8 +205,10 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-.025em;line-height:1.08}
     background:var(--frame);border-bottom:1px solid var(--line);padding:16px 28px;gap:18px;margin:0}
   .etfs,.steps,.stats{grid-template-columns:1fr}
   .benefits{flex-direction:column}
-  .bcard,.bcard--open{flex:1 1 auto;min-height:0}
-  .bcard p{display:block;color:var(--muted);font-size:14.5px}
+  .bcard,.bcard--open{flex:1 1 auto;min-height:0;gap:16px}
+  .bcard--closed p{display:block}
+  .section__head--split{flex-direction:column;align-items:flex-start;gap:16px}
+  .section__head--split .sh__left,.section__head--split .section__lead{max-width:100%}
   .section{padding:64px 20px}
   .hero{min-height:86vh;padding:100px 20px 80px}
   .cta{margin-left:20px;margin-right:20px}
