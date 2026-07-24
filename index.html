@@ -15,163 +15,147 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
 <div class="progress" id="progress"></div>
-<main class="frame">
 
-  <!-- ============ NAV ============ -->
-  <header class="nav" id="top">
-    <div class="nav__inner">
-      <a href="#top" class="brand">
-        <img src="/assets/kraken-logo.png" alt="Kraken logo" class="brand__mark" />
-        <span class="brand__name">KRAKEN</span>
-      </a>
-      <nav class="nav__links">
-        <a href="#protocol">Protocol</a>
-        <a href="#etfs">ETFs</a>
-        <a href="#how">How it works</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="nav__cta">
-        <a href="#" class="btn btn--ghost">Docs</a>
-        <a href="#" class="btn btn--solid">Launch App</a>
-      </div>
-      <button class="nav__burger" aria-label="Menu" id="burger"><span></span><span></span><span></span></button>
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a href="#top" class="brand">
+      <img src="/assets/kraken-logo.png" alt="Kraken logo" class="brand__mark" />
+      <span class="brand__name">KRAKEN</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#protocol">Protocol</a>
+      <a href="#how">Mechanics</a>
+      <a href="#etfs">Baskets</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__cta">
+      <a href="#" class="btn btn--ghost">Docs</a>
+      <a href="#" class="btn btn--solid">Launch App</a>
     </div>
-  </header>
+    <button class="nav__burger" aria-label="Menu" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-  <!-- ============ HERO (painting behind text) ============ -->
-  <section class="hero" id="hero">
-    <img src="/assets/hero-kraken.jpg" alt="A kraken rising from a misty pale sea" class="hero__bg" id="heroBg" />
-    <div class="hero__veil"></div>
-    <div class="hero__content" id="heroContent">
-      <span class="eyebrow reveal">On-chain ETF distribution protocol</span>
-      <h1 class="hero__title reveal" data-d="1">On-chain ETFs,<br />distributed to every holder</h1>
-      <p class="hero__sub reveal" data-d="2">Kraken tokenizes diversified index baskets and streams that exposure directly to token holders — no intermediaries, no lockups, settled entirely on-chain.</p>
-      <div class="hero__actions reveal" data-d="3">
-        <a href="#" class="btn btn--solid btn--lg">Launch App</a>
-        <a href="#how" class="btn btn--ghost btn--lg">See how it works</a>
-      </div>
-      <div class="hero__meta reveal" data-d="4">
-        <span><strong>$0</strong> management fees</span><span class="dot"></span>
-        <span><strong>24/7</strong> on-chain settlement</span><span class="dot"></span>
-        <span><strong>100%</strong> non-custodial</span>
-      </div>
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <img src="/assets/hero-kraken.jpg" alt="A kraken rising from a misty pale sea" class="hero__bg" id="heroBg" />
+  <div class="hero__veil"></div>
+  <div class="hero__content" id="heroContent">
+    <span class="hero__eyebrow label"><span class="dotk"></span> On-chain ETF distribution protocol</span>
+    <h1 class="hero__title"><span class="mask"><span>On-chain ETFs,</span></span><span class="mask"><span>distributed to holders</span></span></h1>
+    <p class="hero__sub reveal" data-d="2">Kraken tokenizes diversified index baskets and streams that exposure directly to token holders — no intermediaries, no lockups, settled entirely on-chain.</p>
+    <div class="hero__actions reveal" data-d="3">
+      <a href="#" class="btn btn--solid btn--lg">Launch App</a>
+      <a href="#how" class="btn btn--ghost btn--lg">Read the mechanics</a>
     </div>
-    <div class="hero__scrollhint">Scroll</div>
-  </section>
+    <div class="hero__meta reveal" data-d="4">
+      <span><strong>$0</strong> fees</span><span class="dot"></span>
+      <span><strong>24/7</strong> settlement</span><span class="dot"></span>
+      <span><strong>100%</strong> non-custodial</span>
+    </div>
+  </div>
+  <div class="hero__hint"><span>Scroll ↓</span></div>
+</section>
 
-  <!-- ============ STRIP (marquee) ============ -->
-  <section class="strip">
-    <p class="strip__label reveal">Distributing exposure across leading on-chain indices</p>
-    <div class="marquee" id="marquee">
-      <span>BTC Index</span><span>ETH Index</span><span>DeFi Basket</span><span>L2 Growth</span>
-      <span>RWA Yield</span><span>AI &amp; Compute</span><span>Stablecoin Blend</span><span>Blue-Chip 10</span>
-    </div>
-  </section>
+<!-- ============ MARQUEE ============ -->
+<section class="strip">
+  <div class="marquee" id="marquee">
+    <span>BTC Index</span><span>ETH Index</span><span>DeFi Basket</span><span>L2 Growth</span>
+    <span>RWA Yield</span><span>AI &amp; Compute</span><span>Stablecoin Blend</span><span>Blue-Chip 10</span>
+  </div>
+</section>
 
-  <!-- ============ BENEFITS ============ -->
-  <section class="section" id="protocol">
-    <div class="section__head section__head--split">
-      <div class="sh__left">
-        <span class="eyebrow reveal">Why Kraken</span>
-        <h2 class="h2 reveal" data-d="1">A protocol, not<br />a wrapper in disguise</h2>
-      </div>
-      <p class="section__lead reveal" data-d="2">Most tokens ask you to deposit, wait and trust a custodian. Kraken flips it — hold the token and diversified index exposure is distributed to you, automatically and on-chain.</p>
-    </div>
+<!-- ============ PROTOCOL / BENEFITS ============ -->
+<section class="block" id="protocol">
+  <div class="block__idx">
+    <span class="num reveal">01</span>
+    <span class="tag reveal" data-d="1">Protocol</span>
+  </div>
+  <div class="block__body">
+    <h2 class="block__title reveal">A protocol, not a wrapper in disguise.</h2>
+    <p class="block__lead reveal" data-d="1">Most tokens ask you to deposit, wait and trust a custodian. Kraken flips it — hold the token and diversified index exposure is distributed to you, automatically and on-chain.</p>
     <div class="benefits">
-      <article class="bcard bcard--closed reveal" data-anim="left">
-        <span class="bcard__num">01.</span>
-        <h3>Hold to earn exposure</h3>
-      </article>
-      <article class="bcard bcard--closed reveal" data-anim="left" data-d="1">
-        <span class="bcard__num">02.</span>
-        <h3>No staking, no lockups</h3>
-      </article>
-      <article class="bcard bcard--open reveal" data-anim="scale" data-d="2">
-        <h3>Distributes itself, on-chain</h3>
+      <article class="bcard bcard--closed reveal" data-anim="left"><span class="bcard__num">01</span><h3>Hold to earn exposure</h3></article>
+      <article class="bcard bcard--closed reveal" data-anim="left" data-d="1"><span class="bcard__num">02</span><h3>No staking, no lockups</h3></article>
+      <article class="bcard bcard--closed reveal" data-anim="right" data-d="2"><span class="bcard__num">03</span><h3>Diversified by design</h3></article>
+      <article class="bcard bcard--open reveal" data-anim="scale" data-d="1">
+        <div class="bcard__head"><span class="bcard__num">04</span><h3>Distributes itself, on-chain</h3></div>
         <p>Rebalances and yield flow straight to holders on a fixed cadence. Every allocation is executed by the protocol and recorded on-chain — one position, updated automatically, with nothing happening off-chain.</p>
       </article>
-      <article class="bcard bcard--closed reveal" data-anim="right" data-d="3">
-        <span class="bcard__num">04.</span>
-        <h3>Diversified by design</h3>
-      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <hr class="divider" />
-
-  <!-- ============ HOW IT WORKS ============ -->
-  <section class="section" id="how">
-    <div class="section__head">
-      <span class="eyebrow reveal">How it works</span>
-      <h2 class="h2 reveal" data-d="1">Four steps from the deep</h2>
-      <p class="section__lead reveal" data-d="2">The protocol handles custody, rebalancing and settlement so you don't have to.</p>
-    </div>
+<!-- ============ MECHANICS / STEPS ============ -->
+<section class="block" id="how">
+  <div class="block__idx">
+    <span class="num reveal">02</span>
+    <span class="tag reveal" data-d="1">Mechanics</span>
+  </div>
+  <div class="block__body">
+    <h2 class="block__title reveal">Four steps from the deep.</h2>
+    <p class="block__lead reveal" data-d="1">The protocol handles custody, rebalancing and settlement so you don't have to.</p>
     <ol class="steps">
-      <li class="step reveal" data-d="1"><span class="step__num">01</span><h3>Hold the token</h3><p>Keep $KRKN in any self-custodial wallet. Your balance is your claim on the fund.</p></li>
-      <li class="step reveal" data-d="2"><span class="step__num">02</span><h3>Baskets get built</h3><p>The protocol assembles tokenized ETF baskets from on-chain assets by transparent rules.</p></li>
-      <li class="step reveal" data-d="3"><span class="step__num">03</span><h3>Exposure is streamed</h3><p>Index returns and rebalances are distributed pro-rata to holders, automatically.</p></li>
-      <li class="step reveal" data-d="4"><span class="step__num">04</span><h3>Verify everything</h3><p>Every distribution and rebalance is recorded on-chain and auditable by anyone.</p></li>
+      <li class="step reveal"><span class="step__n">01</span><div><h3>Hold the token</h3><p>Keep $KRKN in any self-custodial wallet. Your balance is your claim on the fund — nothing to sign up for.</p></div></li>
+      <li class="step reveal" data-d="1"><span class="step__n">02</span><div><h3>Baskets get built</h3><p>The protocol assembles tokenized ETF baskets from on-chain assets, weighted by transparent, published rules.</p></div></li>
+      <li class="step reveal" data-d="2"><span class="step__n">03</span><div><h3>Exposure is streamed</h3><p>Index returns and rebalances are distributed pro-rata to holders on a fixed cadence, automatically.</p></div></li>
+      <li class="step reveal" data-d="3"><span class="step__n">04</span><div><h3>Verify everything</h3><p>Every allocation, distribution and rebalance is recorded on-chain and auditable by anyone, at any time.</p></div></li>
     </ol>
-  </section>
+  </div>
+</section>
 
-  <hr class="divider" />
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="stat reveal" data-anim="scale"><strong data-count="8">0</strong><span>Live index products</span></div>
+  <div class="stat reveal" data-anim="scale" data-d="1"><strong data-count="100" data-suffix="%">0%</strong><span>On-chain settlement</span></div>
+  <div class="stat reveal" data-anim="scale" data-d="2"><strong data-count="0" data-suffix="%">0%</strong><span>Management fees</span></div>
+  <div class="stat reveal" data-anim="scale" data-d="3"><strong>&#8734;</strong><span>Non-custodial</span></div>
+</section>
 
-  <!-- ============ STATS ============ -->
-  <section class="section">
-    <div class="stats">
-      <div class="stat reveal" data-anim="scale"><strong data-count="8">0</strong><span>Live index products</span></div>
-      <div class="stat reveal" data-anim="scale" data-d="1"><strong data-count="100" data-suffix="%">0%</strong><span>On-chain settlement</span></div>
-      <div class="stat reveal" data-anim="scale" data-d="2"><strong data-count="0" data-suffix="%">0%</strong><span>Management fees</span></div>
-      <div class="stat reveal" data-anim="scale" data-d="3"><strong>&#8734;</strong><span>Non-custodial by design</span></div>
+<!-- ============ BASKETS / LEDGER ============ -->
+<section class="block" id="etfs">
+  <div class="block__idx">
+    <span class="num reveal">03</span>
+    <span class="tag reveal" data-d="1">Baskets</span>
+  </div>
+  <div class="block__body">
+    <h2 class="block__title reveal">On-chain ETFs, ready to hold.</h2>
+    <p class="block__lead reveal" data-d="1">A growing lineup of tokenized index products. Hold $KRKN to receive exposure across all of them.</p>
+    <div class="ledger">
+      <div class="ledger__row reveal"><span class="ledger__tk">kBTC10</span><span class="ledger__nm">Blue-Chip 10<small>Ten largest, most liquid on-chain assets</small></span><span class="ledger__m">10 assets</span><span class="ledger__m ledger__m--r">Monthly rebalance</span></div>
+      <div class="ledger__row reveal"><span class="ledger__tk">kDEFI</span><span class="ledger__nm">DeFi Basket<small>Leading decentralized finance protocols</small></span><span class="ledger__m">18 assets</span><span class="ledger__m ledger__m--r">Bi-weekly rebalance</span></div>
+      <div class="ledger__row reveal"><span class="ledger__tk">kRWA</span><span class="ledger__nm">RWA Yield<small>Tokenized real-world assets & treasuries</small></span><span class="ledger__m">12 assets</span><span class="ledger__m ledger__m--r">Quarterly rebalance</span></div>
+      <div class="ledger__row reveal"><span class="ledger__tk">kL2</span><span class="ledger__nm">L2 Growth<small>Leading Layer-2 networks and tokens</small></span><span class="ledger__m">9 assets</span><span class="ledger__m ledger__m--r">Monthly rebalance</span></div>
+      <div class="ledger__row reveal"><span class="ledger__tk">kAI</span><span class="ledger__nm">AI &amp; Compute<small>Decentralized AI, compute & data infra</small></span><span class="ledger__m">11 assets</span><span class="ledger__m ledger__m--r">Monthly rebalance</span></div>
+      <div class="ledger__row reveal"><span class="ledger__tk">kSTBL</span><span class="ledger__nm">Stablecoin Blend<small>Transparency-first on-chain cash blend</small></span><span class="ledger__m">6 assets</span><span class="ledger__m ledger__m--r">Continuous</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <hr class="divider" />
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <h2 class="reveal">The deep is patient.<br />Your exposure shouldn't be.</h2>
+  <p class="reveal" data-d="1">Hold one token. Get a diversified, on-chain ETF portfolio that distributes itself to you.</p>
+  <div class="hero__actions reveal" data-d="2">
+    <a href="#" class="btn btn--solid btn--lg">Launch App</a>
+    <a href="#" class="btn btn--ghost btn--lg">Read the docs</a>
+  </div>
+</section>
 
-  <!-- ============ ETF PRODUCTS ============ -->
-  <section class="section" id="etfs">
-    <div class="section__head">
-      <span class="eyebrow reveal">The baskets</span>
-      <h2 class="h2 reveal" data-d="1">On-chain ETFs, ready to hold</h2>
-      <p class="section__lead reveal" data-d="2">A growing lineup of tokenized index products. Hold $KRKN to receive exposure across all of them.</p>
-    </div>
-    <div class="etfs">
-      <article class="etf reveal" data-anim="up" data-d="1"><div class="etf__top"><span class="etf__ticker">kBTC10</span><span class="etf__tag">Majors</span></div><h3>Blue-Chip 10</h3><p>The ten largest, most liquid on-chain assets, weighted by market cap and rebalanced monthly.</p><div class="etf__foot"><span>10 assets</span><span>Monthly rebalance</span></div></article>
-      <article class="etf etf--feature reveal" data-anim="up" data-d="2"><div class="etf__top"><span class="etf__ticker">kDEFI</span><span class="etf__tag">Sector</span></div><h3>DeFi Basket</h3><p>Diversified exposure to the leading decentralized finance protocols powering on-chain markets.</p><div class="etf__foot"><span>18 assets</span><span>Bi-weekly rebalance</span></div></article>
-      <article class="etf reveal" data-anim="up" data-d="3"><div class="etf__top"><span class="etf__ticker">kRWA</span><span class="etf__tag">Yield</span></div><h3>RWA Yield</h3><p>Tokenized real-world assets and on-chain treasuries assembled into a single yield-bearing index.</p><div class="etf__foot"><span>12 assets</span><span>Quarterly rebalance</span></div></article>
-      <article class="etf reveal" data-anim="up" data-d="1"><div class="etf__top"><span class="etf__ticker">kL2</span><span class="etf__tag">Growth</span></div><h3>L2 Growth</h3><p>The scaling layer of the ecosystem — a curated basket of leading Layer-2 networks and tokens.</p><div class="etf__foot"><span>9 assets</span><span>Monthly rebalance</span></div></article>
-      <article class="etf reveal" data-anim="up" data-d="2"><div class="etf__top"><span class="etf__ticker">kAI</span><span class="etf__tag">Thematic</span></div><h3>AI &amp; Compute</h3><p>Exposure to the tokens building decentralized AI, compute and data infrastructure.</p><div class="etf__foot"><span>11 assets</span><span>Monthly rebalance</span></div></article>
-      <article class="etf reveal" data-anim="up" data-d="3"><div class="etf__top"><span class="etf__ticker">kSTBL</span><span class="etf__tag">Stable</span></div><h3>Stablecoin Blend</h3><p>A diversified, transparency-first blend of leading stablecoins for on-chain cash management.</p><div class="etf__foot"><span>6 assets</span><span>Continuous</span></div></article>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- ============ CTA (text panel) ============ -->
-  <section class="cta">
-    <div class="cta__panel reveal" data-anim="scale">
-      <h2>The deep is patient.<br />Your exposure shouldn't be.</h2>
-      <p>Hold one token. Get a diversified, on-chain ETF portfolio that distributes itself to you.</p>
-      <div class="hero__actions">
-        <a href="#" class="btn btn--solid btn--lg">Launch App</a>
-        <a href="#" class="btn btn--ghost btn--lg">Read the docs</a>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- ============ FAQ ============ -->
-  <section class="section" id="faq">
-    <div class="section__head">
-      <span class="eyebrow reveal">FAQ</span>
-      <h2 class="h2 reveal" data-d="1">Questions from the surface</h2>
-    </div>
+<!-- ============ FAQ ============ -->
+<section class="block" id="faq">
+  <div class="block__idx">
+    <span class="num reveal">04</span>
+    <span class="tag reveal" data-d="1">FAQ</span>
+  </div>
+  <div class="block__body">
+    <h2 class="block__title reveal">Questions from the surface.</h2>
     <div class="faq">
       <details class="qa reveal"><summary>What exactly does Kraken distribute?</summary><p>Kraken manages tokenized index baskets ("on-chain ETFs") and distributes the exposure and returns of those baskets pro-rata to $KRKN holders, entirely through on-chain contracts.</p></details>
       <details class="qa reveal" data-d="1"><summary>Do I need to stake or lock my tokens?</summary><p>No. Distribution is based on your wallet balance. There is no staking contract, lockup, or claim window required to be eligible.</p></details>
@@ -179,54 +163,50 @@
       <details class="qa reveal" data-d="3"><summary>How often are baskets rebalanced?</summary><p>Each product publishes its own cadence, ranging from continuous to quarterly. Every rebalance is executed and recorded on-chain.</p></details>
       <details class="qa reveal" data-d="4"><summary>Is this financial advice?</summary><p>No. Kraken is experimental protocol software. Nothing here is investment advice, and tokenized index products carry risk. Always do your own research.</p></details>
     </div>
-  </section>
+  </div>
+</section>
 
-  <hr class="divider" />
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="footer__top">
-      <div class="footer__brand">
-        <a href="#top" class="brand"><img src="/assets/kraken-logo.png" alt="Kraken logo" class="brand__mark" /><span class="brand__name">KRAKEN</span></a>
-        <p>On-chain ETFs, distributed to every holder.</p>
-      </div>
-      <div class="footer__cols">
-        <div class="footer__col"><h4>Protocol</h4><a href="#protocol">Overview</a><a href="#etfs">ETF baskets</a><a href="#how">How it works</a></div>
-        <div class="footer__col"><h4>Resources</h4><a href="#">Documentation</a><a href="#">Whitepaper</a><a href="#faq">FAQ</a></div>
-        <div class="footer__col"><h4>Community</h4><a href="#">X / Twitter</a><a href="#">Discord</a><a href="#">GitHub</a></div>
-      </div>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <a href="#top" class="brand"><img src="/assets/kraken-logo.png" alt="Kraken logo" class="brand__mark" /><span class="brand__name">KRAKEN</span></a>
+      <p>On-chain ETFs, distributed to every holder.</p>
     </div>
-    <div class="footer__bottom">
-      <span>© 2026 Kraken Protocol. All rights reserved.</span>
-      <span class="footer__disc">Experimental software. Not financial advice.</span>
+    <div class="footer__cols">
+      <div class="footer__col"><h4>Protocol</h4><a href="#protocol">Overview</a><a href="#etfs">Baskets</a><a href="#how">Mechanics</a></div>
+      <div class="footer__col"><h4>Resources</h4><a href="#">Documentation</a><a href="#">Whitepaper</a><a href="#faq">FAQ</a></div>
+      <div class="footer__col"><h4>Community</h4><a href="#">X / Twitter</a><a href="#">Discord</a><a href="#">GitHub</a></div>
     </div>
-  </footer>
-
-</main>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Kraken Protocol</span>
+    <span>Experimental software · Not financial advice</span>
+  </div>
+</footer>
 
 <script>
-  // Mobile menu
   const burger = document.getElementById('burger');
   burger.addEventListener('click', () => document.body.classList.toggle('nav-open'));
   document.querySelector('.nav__links').addEventListener('click', e => {
     if (e.target.tagName === 'A') document.body.classList.remove('nav-open');
   });
 
-  // Duplicate marquee content for seamless loop
+  // Seamless marquee
   const marquee = document.getElementById('marquee');
   marquee.innerHTML += marquee.innerHTML;
 
-  // Reveal on scroll + stat counters
+  // Reveal + counters
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
       e.target.classList.add('in');
-      e.target.querySelectorAll?.('[data-count]').forEach(runCounter);
       if (e.target.matches?.('[data-count]')) runCounter(e.target);
+      e.target.querySelectorAll?.('[data-count]').forEach(runCounter);
       io.unobserve(e.target);
     });
-  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal, .rule').forEach(el => io.observe(el));
 
   function runCounter(el){
     if (el.dataset.done) return; el.dataset.done = '1';
@@ -240,27 +220,22 @@
     })(t0);
   }
 
-  // Scroll-linked effects: progress bar, hero parallax + fade, CTA parallax
+  // Scroll-linked: progress + hero parallax/fade
   const progress = document.getElementById('progress');
   const heroBg = document.getElementById('heroBg');
   const heroContent = document.getElementById('heroContent');
   let ticking = false;
-
   function onScroll(){
     const y = window.scrollY;
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     progress.style.width = (docH > 0 ? (y / docH) * 100 : 0) + '%';
-
-    // Hero: image drifts down slowly, content rises + fades out
     const hp = Math.min(y / (window.innerHeight * 0.9), 1);
-    heroBg.style.setProperty('--par', (hp * 60).toFixed(1) + 'px');
-    heroContent.style.setProperty('--heroShift', (-hp * 70).toFixed(1) + 'px');
+    heroBg.style.setProperty('--par', (hp * 56).toFixed(1) + 'px');
+    heroContent.style.setProperty('--heroShift', (-hp * 64).toFixed(1) + 'px');
     heroContent.style.setProperty('--heroFade', (1 - hp * 1.05).toFixed(3));
     ticking = false;
   }
-  window.addEventListener('scroll', () => {
-    if (!ticking){ requestAnimationFrame(onScroll); ticking = true; }
-  }, { passive: true });
+  window.addEventListener('scroll', () => { if (!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
   onScroll();
 </script>
 </body>
